@@ -40,8 +40,6 @@ The plugin analyzes player movement and rotation packets dynamically while glidi
 *   `doneantitarget.alerts` - Allows staff members to receive real-time notification alerts when a player triggers a check (Default: OP).
 
 ---
-### Youtube Video:
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0AQy144cVYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 📦 Default Configuration (`config.yml`)
 
