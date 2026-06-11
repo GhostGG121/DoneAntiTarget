@@ -1,0 +1,19 @@
+name: DoneAntiTarget
+version: '${project.version}'
+main: com.done.antitarget.DoneAntiTarget
+api-version: '1.19'
+description: Elytra Target AutoFirework anti-cheat plugin.
+author: Done
+commands:
+  doneantitarget:
+    description: DoneAntiTarget admin commands
+    aliases: [doneat, atarget]
+    permission: doneantitarget.admin
+    usage: /doneantitarget reload
+permissions:
+  doneantitarget.admin:
+    description: Allows reloading the DoneAntiTarget configuration.
+    default: op
+  doneantitarget.alerts:
+    description: Allows receiving notification alerts when a player triggers the check.
+    default: op

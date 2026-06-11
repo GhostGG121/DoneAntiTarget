@@ -1,0 +1,58 @@
+# DoneAntiTarget Eklenti Ayarlari
+
+detection:
+  # Ihlal puanlarinin kac saniyede bir temizlenecegi
+  decay-time-seconds: 30
+  
+  # Kontrollerin sadece oyuncu elytra ile ucarken yapilmasi (Performans icin true tavsiye edilir)
+  check-only-gliding: true
+
+  # Auto Firework Modulu (Hizli slot degistirip havai fisek basma)
+  auto-firework:
+    enabled: true
+    max-ms-threshold: 80
+    violation-threshold: 5
+
+  # Modul 1: Crosshair Kusursuzlugu (Aci degisim hizi sabitligi)
+  rotation-consistency:
+    enabled: true
+    sample-size: 10
+    max-std-dev-threshold: 0.005
+    min-mean-delta: 0.1
+    violation-threshold: 3
+
+  # Modul 2: Hitbox Merkezine Bagimlilik (Miknatis gibi rakip merkezine kilitlenme)
+  center-mass-lock:
+    enabled: true
+    max-angle-deviation: 0.005
+    consecutive-hits-threshold: 5
+    violation-threshold: 2
+
+  # Modul 3: Fisek Patlama Anindaki Aci Sicramasi (Snap-to-Target)
+  snap-to-target:
+    enabled: true
+    watch-ticks: 2
+    min-snap-angle: 30.0
+    max-lock-angle: 1.5
+    max-target-distance: 50.0
+    violation-threshold: 2
+
+  # Modul 4: Aci Sapmasi / Farkli Yone Bakarak Vurma (No-Look Hit)
+  no-look-hit:
+    enabled: true
+    max-allowed-angle: 75.0
+    violation-threshold: 7
+
+# Ihlal Durumunda Yapilacak Islemler
+actions:
+  kick:
+    enabled: true
+    reason: "&8[&cDoneAntiTarget&8] &cIllegal elytra behavior detected (%check% / %info%)."
+  
+  alert:
+    enabled: true
+    message: "&8[&cDoneAntiTarget&8] &e%player% &cfailed %check% &7(Info: %info%, VL: %vl%/%threshold%)"
+    
+  console-log:
+    enabled: true
+    message: "[DoneAntiTarget] %player% failed %check% (Info: %info%, VL: %vl%/%threshold%)"
